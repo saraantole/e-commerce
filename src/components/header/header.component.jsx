@@ -2,7 +2,7 @@ import './header.styles.scss';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { connect } from 'react-redux';
-import {createStructuredSelector} from 'reselect';
+import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
