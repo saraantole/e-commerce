@@ -1,12 +1,12 @@
 import MenuContainer from '../../components/menu-container/menu-container.component';
 
-import './homepage.styles.scss';
+import { HomePageDiv } from './homepage.styles';
 
 const HomePage = () => {
     return (
-        <div className='homepage'>
+        <HomePageDiv>
             <MenuContainer />
-        </div>
+        </HomePageDiv>
     )
 }
 

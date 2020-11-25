@@ -1,4 +1,6 @@
-.menu-item {
+import styled from 'styled-components';
+
+export const MenuItemDiv = styled.div`
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -11,7 +13,7 @@
 
   &:hover {
     cursor: pointer;
-
+    
     & .bg-img {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -33,15 +35,17 @@
   &:last-child {
     margin-left: 7.5px;
   }
+`;
 
-  .bg-img {
+export const BgImg = styled.div`
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
-  }
+    background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+`;
 
-  .content {
+export const ContentDiv = styled.div`
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -52,19 +56,19 @@
     background-color: #fff;
     opacity: 0.7;
     position: absolute;
+`;
 
-    .title {
+export const TitleH1 = styled.h1`
       font-weight: bold;
       margin-bottom: 6px;
       font-size: 22px;
       color: #4a4a4a;
       text-transform: uppercase;
-    }
+`;
 
-    .subtitle {
+export const SubtitleSpan = styled.span`
       font-weight: lighter;
       font-size: 16px;
       text-transform: uppercase;
-    }
-  }
-}
+`;
+

@@ -1,4 +1,4 @@
-import './collections-overview.styles.scss';
+import { CollectionsOverviewDiv } from './collections-overview.styles';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -9,13 +9,13 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 
 const CollectionsOverview = ({ collections }) => {
     return (
-        <div className='collections-overview'>
+        <CollectionsOverviewDiv>
             {
                 collections.map(({ id, ...otherCollectionProps }) => (
                     <CollectionPreview key={id} {...otherCollectionProps} />
                 ))
             }
-        </div>
+        </CollectionsOverviewDiv>
     )
 };
 
