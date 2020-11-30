@@ -12,6 +12,7 @@ import CartItem from '../cart-item/cart-item.component';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => (
     <CartDropdownDiv>
+
         <CartItemsDiv>
             {
                 cartItems.length ?
@@ -20,11 +21,16 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
                     <EmptyMessageSpan>Your cart is empty</EmptyMessageSpan>
             }
         </CartItemsDiv>
-        <CustomButton onClick={() => {
-            history.push('/checkout');
-            dispatch(toggleCartHidden())
-        }}>
-            Go to Checkout</CustomButton>
+
+        {
+            cartItems.length ?
+                (<CustomButton onClick={() => {
+                    history.push('/checkout');
+                    dispatch(toggleCartHidden())
+                }}> Go to Checkout</CustomButton>)
+                : null
+        }
+
     </CartDropdownDiv>
 );
 
