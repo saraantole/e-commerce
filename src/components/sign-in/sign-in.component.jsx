@@ -2,7 +2,8 @@ import { Component } from 'react';
 
 import { SignInDiv, TitleH2, ButtonsDiv } from './sign-in.styles';
 
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import { connect } from 'react-redux';
+import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
@@ -18,14 +19,10 @@ class SignIn extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         const { email, password } = this.state;
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
-            this.setState({ email: '', password: '' });
-        } catch (err) {
-            console.log(err)
-        }
+        const { emailSignInStart } = this.props;
+
+        emailSignInStart(email, password);
     };
 
     handleChange = event => {
@@ -34,6 +31,7 @@ class SignIn extends Component {
     }
 
     render() {
+        const { googleSignInStart } = this.props;
         return (
             <SignInDiv>
                 <TitleH2>I already have an account</TitleH2>
@@ -58,12 +56,17 @@ class SignIn extends Component {
                     />
                     <ButtonsDiv>
                         <CustomButton type='submit'>Sign In</CustomButton>
-                        <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>Sign In with Google</CustomButton>
+                        <CustomButton type="button" onClick={googleSignInStart} isGoogleSignIn>Sign In with Google</CustomButton>
                     </ButtonsDiv>
                 </form>
             </SignInDiv>
         )
     }
-}
+};
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+    googleSignInStart: () => dispatch(googleSignInStart()),
+    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
+})
+
+export default connect(null, mapDispatchToProps)(SignIn);
