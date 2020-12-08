@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import CustomButton from '../custom-button/custom-button.component';
 
 
@@ -20,6 +19,19 @@ export const CollectionItemDiv = styled.div`
       display: flex;
     }
   }
+
+  @media screen and (max-width: 800px){
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
+      }
+    }
+  }
 `;
 
 export const ItemImageDiv = styled.div`
@@ -37,16 +49,28 @@ height: 5%;
 display: flex;
 justify-content: space-between;
 font-size: 18px;
+
+@media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 export const NameSpan = styled.span`
 width: 85%;
 margin-bottom: 15px;
+
+@media screen and (max-width: 800px) {
+    width: 70%;
+  }
 `;
 
 export const PriceSpan = styled.span`
 width: 15%;
 text-align: end;
+
+@media screen and (max-width: 800px) {
+    width: 30%;
+  }
 `;
 
 export const ItemCustomButton = styled(CustomButton)`
@@ -55,4 +79,11 @@ opacity: 0.7;
 position: absolute;
 top: 255px;
 display: none;
+
+@media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
