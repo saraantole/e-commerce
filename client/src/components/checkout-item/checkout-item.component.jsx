@@ -3,7 +3,7 @@ import { CheckoutItemDiv, ImageDiv, TextSpan, QuantitySpan, RemoveButtonDiv } fr
 import { connect } from 'react-redux';
 import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
 
-const CheckoutItem = ({ cartItem, clearItemFromCart, addItem, removeItem }) => {
+export const CheckoutItem = ({ cartItem, clearItemFromCart, addItem, removeItem }) => {
     const { imageUrl, name, quantity, price } = cartItem;
     return (
         <CheckoutItemDiv>

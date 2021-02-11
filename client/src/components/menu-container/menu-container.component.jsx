@@ -6,7 +6,7 @@ import { selectMenuSections } from '../../redux/menu-container/menu-container.se
 
 import { MenuContainerDiv } from './menu-container.styles';
 
-const MenuContainer = ({ menuSections }) => {
+export const MenuContainer = ({ menuSections }) => {
     return (
         <MenuContainerDiv>
             {

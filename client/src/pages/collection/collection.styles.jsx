@@ -27,4 +27,6 @@ export const ItemsDiv = styled.div`
   }
 `;
 
+ItemsDiv.displayName = 'ItemsDiv';
+
 

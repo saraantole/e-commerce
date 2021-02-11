@@ -5,7 +5,7 @@ import { selectCollection } from '../../redux/shop/shop.selectors';
 
 import { CollectionPageDiv, TitleH2, ItemsDiv } from './collection.styles';
 
-const CollectionPage = ({ collection }) => {
+export const CollectionPage = ({ collection }) => {
     const { title, items } = collection;
     return (
         <CollectionPageDiv>

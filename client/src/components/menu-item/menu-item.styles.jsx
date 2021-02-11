@@ -45,6 +45,8 @@ export const MenuItemDiv = styled.div`
     }
 `;
 
+MenuItemDiv.displayName = 'MenuItemDiv';
+
 export const BgImgDiv = styled.div`
     width: 100%;
     height: 100%;
@@ -52,6 +54,8 @@ export const BgImgDiv = styled.div`
     background-size: cover;
     background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
+
+BgImgDiv.displayName = 'BgImgDiv';
 
 export const ContentDiv = styled.div`
     height: 90px;

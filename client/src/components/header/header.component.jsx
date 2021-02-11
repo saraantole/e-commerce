@@ -10,7 +10,7 @@ import { signOutStart } from '../../redux/user/user.actions';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
-const Header = ({ currentUser, hidden, signOutStart }) => {
+export const Header = ({ currentUser, hidden, signOutStart }) => {
     return (
         <HeaderDiv>
             <LogoContainer to='/'>
@@ -18,7 +18,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
             </LogoContainer>
             <OptionsDiv>
                 <OptionLink to='/shop'>Shop</OptionLink>
-                <OptionLink to='/contact'>Contact</OptionLink>
                 {
                     currentUser ?
                         <OptionLink as='div' onClick={signOutStart}>Sign Out</OptionLink>

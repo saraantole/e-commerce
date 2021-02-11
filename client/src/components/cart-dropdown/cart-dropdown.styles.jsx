@@ -26,3 +26,4 @@ export const EmptyMessageSpan = styled.span`
     margin: 50px auto;
 `;
 
+EmptyMessageSpan.displayName = 'EmptyMessageSpan';

@@ -18,6 +18,8 @@ export const TitleH1 = styled.h1`
     text-transform: uppercase;
 `;
 
+TitleH1.displayName= 'TitleH1';
+
 export const PreviewDiv = styled.div`
     display: flex;
     justify-content: space-between;

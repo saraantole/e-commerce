@@ -43,6 +43,8 @@ export const ItemImageDiv = styled.div`
     background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
 
+ItemImageDiv.displayName = 'ItemImageDiv';
+
 export const CollectionFooterDiv = styled.div`
 width: 100%;
 height: 5%;
@@ -55,6 +57,8 @@ font-size: 18px;
   }
 `;
 
+CollectionFooterDiv.displayName = 'CollectionFooterDiv';
+
 export const NameSpan = styled.span`
 width: 85%;
 margin-bottom: 15px;
@@ -64,6 +68,8 @@ margin-bottom: 15px;
   }
 `;
 
+NameSpan.displayName = 'NameSpan';
+
 export const PriceSpan = styled.span`
 width: 15%;
 text-align: end;
@@ -72,6 +78,8 @@ text-align: end;
     width: 30%;
   }
 `;
+
+PriceSpan.displayName = 'PriceSpan';
 
 export const ItemCustomButton = styled(CustomButton)`
 width: 80%;
@@ -87,3 +95,5 @@ display: none;
     padding: 0 10px;
   }
 `;
+
+ItemCustomButton.displayName= 'ItemCustomButton';

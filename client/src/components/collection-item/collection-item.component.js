@@ -3,7 +3,7 @@ import { CollectionItemDiv, ItemImageDiv, CollectionFooterDiv, NameSpan, PriceSp
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 
-const CollectionItem = ({ item, addItem }) => {
+export const CollectionItem = ({ item, addItem }) => {
     const { imageUrl, name, price } = item;
     return (
         <CollectionItemDiv>
